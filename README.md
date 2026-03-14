@@ -2,6 +2,9 @@
 
 A production-ready full-stack application built for the Backend Developer Intern assignment. Featuring JWT authentication, Role-Based Access Control (RBAC), and a sleek modern dashboard.
 
+**Live Demo:** [https://authentication-frontend-bc2q.onrender.com](https://authentication-frontend-bc2q.onrender.com)
+**API Documentation (Swagger):** [https://authentication-backend-a2ua.onrender.com/api-docs/](https://authentication-backend-a2ua.onrender.com/api-docs/)
+
 ## 🚀 Key Features
 
 ### Backend (Node.js & Express)
@@ -83,4 +86,3 @@ To handle millions of users and high throughput, this architecture can be evolve
 
 ---
 
-Developed with ❤️ for the Primetrade Team.

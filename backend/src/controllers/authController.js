@@ -74,7 +74,7 @@ const sendTokenResponse = (user, statusCode, res) => {
   };
   if (process.env.NODE_ENV === 'production') {
     options.secure = true;
-    options.sameSite = 'none'; // Critical for cross-domain cookies on Render
+    options.sameSite = 'none';
   }
   res.status(statusCode).cookie('token', token, options).json({
     success: true,

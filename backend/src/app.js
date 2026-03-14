@@ -7,7 +7,6 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocs = require('./config/swagger');
 const apiV1 = require('./routes/apiV1');
 const connectDB = require('./config/db');
-
 const helmet = require('helmet');
 
 dotenv.config();
@@ -22,12 +21,11 @@ app.use(cookieParser());
 const allowedOrigins = [
   'http://localhost:5173',
   process.env.FRONTEND_URL,
-  process.env.FRONTEND_URL?.replace(/\/$/, ""), // Remove trailing slash if present
+  process.env.FRONTEND_URL?.replace(/\/$/, ""),
 ].filter(Boolean);
 
 app.use(cors({
   origin: function (origin, callback) {
-    // allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
     
     if (allowedOrigins.indexOf(origin) !== -1 || allowedOrigins.indexOf(origin.replace(/\/$/, "")) !== -1) {

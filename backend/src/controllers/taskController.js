@@ -2,8 +2,10 @@ const Task = require('../models/Task');
 
 exports.getTasks = async (req, res, next) => {
   try {
-    let query;
-    if (req.user.role === 'admin') {
+    // If admin, they see everything. If user, they see only theirs.
+    const isAdmin = req.user && req.user.role === 'admin';
+    
+    if (isAdmin) {
       query = Task.find().populate('user', 'name email');
     } else {
       query = Task.find({ user: req.user.id });

@@ -10,12 +10,12 @@ const options = {
     },
     servers: [
       {
-        url: process.env.BACKEND_URL || 'http://localhost:5000/api/v1',
-        description: 'Current Server',
+        url: '/api/v1',
+        description: 'Automatic Discovery (Production/Local)',
       },
       {
         url: 'http://localhost:5000/api/v1',
-        description: 'Development server',
+        description: 'Manual Local Backend',
       },
     ],
     components: {
